@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>love calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-box">
+        <h1>Love score calculator❤️</h1>
+        <div class="input">
+            <input type="text" id="name1" placeholder="enter your name">
+            <input type="text" id="name2" placeholder="enter your crush's name">
+        </div>
+        <button id="calculateBtn" onclick="calculateLoveScore()">Calculate lovescore</button>
+
+        <div id="output"> </div>
+    </div>
+</div>
+</body>
+<script>
+function calculateLoveScore(){
+    const name1 = document.getElementById('name1').value;
+    const name2 = document.getElementById('name2').value;
+    const calculateBtn = document.getElementById('calculateBtn');
+    if(name1 === "" || name2 === ""){
+        alert("please enter both names");
+        return;
+    }
+    let loveScore = Math.floor(Math.random()* 100)+ 1;
+
+    if(name1 === 'nafisa' || name2 === 'unknown'){
+       const resultDiv = document.getElementById('output');
+       resultDiv.innerHTML = `${name1}❤️${name2} have a lovescore of 100% you
+       two have strong relatioship`
+       calculateBtn.disabled = true;
+       return;
+    }
+    // output
+    const resultDiv = document.getElementById('output');
+    resultDiv.innerHTML = `${name1}❤️${name2} have a lovescore of ${loveScore}`
+    calculateBtn.disabled = true;
+}
+</script>
+</html>
+
